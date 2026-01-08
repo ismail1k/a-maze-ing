@@ -1,7 +1,7 @@
 import sys
 import curses
 import time
-from errors import ParseError
+from utils.errors import ParseError
 from MazeGenerator import MazeGenerator
 
 class Canvas:
