@@ -24,11 +24,11 @@ class Curses:
         rows = len(matrix)
         cols = len(matrix[0])
         print(f"Height: {h}/{rows}/{int((h - rows) / 2)}, Width: {w}/{cols}/{int((w - cols) / 2)}")
-        window = curses.newwin(rows + 1, cols + 1, int((h - rows) / 2), int((w - cols) / 2))
+        window = curses.newwin((rows * 4) + 1, (cols * 4) + 1, int((h - (rows * 4)) / 2), int((w - (cols * 4)) / 2))
         for row in range(rows):
             for col in range(cols):
                 cell = CellController(matrix[row][col])
-                window.addch(row, col, cell.hexadecimal())
-                window.addstr(row, col, self._cell_to_ansi(cell.raw()))
+                window.addch(row * 4, col * 4, cell.hexadecimal())
+                # window.addstr(row, col, self._cell_to_ansi(cell.raw()))
         window.refresh()
         window.getch()

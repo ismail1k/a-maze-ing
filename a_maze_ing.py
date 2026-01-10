@@ -11,7 +11,7 @@ if __name__ == '__main__':
         sys.stderr.write(str(error))
         sys.stderr.flush()
         sys.exit(1)
-    maze = MazeGenerator((32, 32), 1)
+    maze = MazeGenerator((8, 8), 1)
     maze.generate()
     maze.print()
     canvas = Curses()
