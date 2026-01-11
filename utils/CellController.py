@@ -9,10 +9,10 @@ class CellController:
     def generate(self, seed = -1):
         number = random.randint(0, 16)
         self._cell = {
-            'east': 1 if number & 8 else 0,
-            'north': 1 if number & 4 else 0,
-            'west': 1 if number & 2 else 0,
-            'south': 1 if number & 1 else 0,
+            'east': 0,
+            'north': 0,
+            'west': 0,
+            'south': 0,
         }
 
     def raw(self):
